@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bödön 1',
+      title: 'Mati flutter plugin demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -29,9 +29,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   void showMetaMapFlow() {
-    MetaMapFlutter.showMetaMapFlow("61dc2317e05524001d482f04", "61e7cb3d148f52001c48e021", {});
+    MetaMapFlutter.showMetaMapFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", {});
     MetaMapFlutter.resultCompleter.future.then((result) => Fluttertoast.showToast(
-        msg: result is ResultSuccess ? "Zsirosság ${result.verificationId}" : "Nademicsinááálsz",
+        msg: result is ResultSuccess ? "Success ${result.verificationId}" : "Cancelled",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM));
   }
@@ -40,12 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Bödön 2"),
+          title: Text("MetaMap flutter plugin demo"),
         ),
         body: Center(
             child: ElevatedButton(
               onPressed: showMetaMapFlow,
-              child: const Text('Itt az idő'),
+              child: const Text('Verify me'),
             )
         )
     );

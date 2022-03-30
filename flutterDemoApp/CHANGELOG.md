@@ -1,1 +1,0 @@
-### 2.4.7 Fixed color issue for android
